@@ -24,7 +24,33 @@ body {
     color: #c499ff;
     font-weight: bold;
 }
+/* ===== BOUTON HAMBURGER CORRIGÉ ===== */
+.hamburger {
+    display: none; /* Caché sur ordinateur */
+    font-size: 32px; /* Plus grand pour être facile à cliquer */
+    cursor: pointer;
+    color: #c499ff !important; /* Force la couleur violette pour qu'elle soit visible */
+    position: absolute;
+    right: 20px; /* Aligné à droite */
+    top: 50%;
+    transform: translateY(-50%); /* Centre verticalement dans la barre blanche */
+    z-index: 1001;
+    user-select: none;
+}
 
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Visible sur mobile */
+    }
+
+    .navbar {
+        height: 60px; /* Fixe la hauteur de la barre pour éviter les barres bizarres */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
 /* ===== HERO ===== */
 .hero {
     background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
