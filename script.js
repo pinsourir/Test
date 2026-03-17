@@ -70,3 +70,21 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove("open");
     };
 });
+// ========= Fleche du CAROUSEL  ==========
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const slide = document.getElementById('carousel').querySelector('.carousel-slide');
+    const totalSlides = slide.querySelectorAll('img').length;
+    
+    currentIndex += direction;
+
+    if (currentIndex >= totalSlides) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = totalSlides - 1;
+    }
+
+    const offset = -currentIndex * 100;
+    slide.style.transform = `translateX(${offset}%)`;
+}
