@@ -1,4 +1,3 @@
-
 /* Nettoyage du body pour la police élégante */
 body {
     margin: 0;
@@ -312,4 +311,54 @@ footer {
 .flip {
     transform: translateY(-10px);
     opacity: 0.5;
+}
+/* ==========================================================
+   AJUSTEMENTS FINAUX POUR MOBILE (À METTRE TOUT EN BAS)
+   ========================================================== */
+
+@media (max-width: 900px) {
+    /* 1. Ajustement des titres pour qu'ils ne débordent pas */
+    .hero h1 {
+        font-size: 3.5rem !important; /* Réduit le gros titre Alicia & Bruno */
+    }
+
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 1.8rem !important; }
+
+    /* 2. Ajustement du compte à rebours pour qu'il tienne sur une ligne ou deux */
+    .countdown-container {
+        gap: 10px !important; /* Réduit l'espace entre les boîtes */
+        padding: 0 10px;
+    }
+
+    .time-box {
+        min-width: 75px !important; /* Boîtes plus étroites */
+        padding: 15px 5px !important; /* Moins de vide interne */
+        border-radius: 12px !important;
+    }
+
+    .time-box span {
+        font-size: 1.8rem !important; /* Chiffres plus petits */
+    }
+
+    .time-box small {
+        font-size: 0.7rem !important; /* Texte "Jours", "Heures" plus petit */
+    }
+
+    /* 3. Ajustement des sections pour moins de vide inutile */
+    section {
+        padding: 50px 15px !important;
+    }
+
+    /* 4. Menu mobile : On s'assure qu'il prend tout l'écran proprement */
+    .nav-links {
+        background-color: white !important; /* Fond bien opaque */
+    }
+    
+    .nav-links a {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        border-bottom: none !important; /* Optionnel : enlever la ligne si trop chargé */
+        width: auto;
+    }
 }
