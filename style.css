@@ -51,19 +51,14 @@ body {
 
 /* BOUTON HAMBURGER (Visible uniquement sur mobile) */
 
-/* On s'assure que le bouton ne subit pas les marges des titres/textes */
 .hamburger {
     display: none; 
-    font-size: 30px;
+    font-size: 32px;
     cursor: pointer;
-    color: #c499ff;
-    position: absolute; /* Il sort du flux pour ne plus être poussé */
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%); /* Centrage vertical parfait */
-    margin: 0 !important; /* Annule tout décalage accidentel */
-    z-index: 3001;
+    color: #c499ff !important; /* Forcé en violet pour être visible */
+    user-select: none;
 }
+
 
 /* ===== ADAPTATION MOBILE (Max 768px) ===== */
 @media (max-width: 768px) {
