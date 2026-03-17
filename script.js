@@ -56,3 +56,17 @@ setInterval(function() {
     animateValue("seconds", seconds);
 
 }, 1000);
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.onclick = function() {
+    navLinks.classList.toggle("open");
+}
+
+// Ferme le menu si on clique sur un lien (pratique sur tel)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.onclick = () => {
+        navLinks.classList.remove("open");
+    };
+});
