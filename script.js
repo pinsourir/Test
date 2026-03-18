@@ -1,7 +1,7 @@
 // ===== COMPTE À REBOURS MARIAGE =====
 
 // Date du mariage : 26 août 2027 à 15h
-const weddingDate = new Date("August 26, 2027 15:00:00").getTime();
+const weddingDate = new Date(2027, 7, 26, 15, 0, 0).getTime();
 
 // Fonction pour animer les chiffres
 function animateValue(id, value) {
