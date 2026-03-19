@@ -133,9 +133,6 @@ p {
         text-align: center;
     }
 
-   /* .nav-links a {
-        font-size: 18px; /* Taille originale conservée */
-    /*}
     /* Style des textes dans le menu mobile */
     .nav-links a {
         font-size: 22px !important; /* Plus grand pour cliquer facilement avec le doigt */
