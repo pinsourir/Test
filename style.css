@@ -133,8 +133,19 @@ p {
         text-align: center;
     }
 
-    .nav-links a {
+   /* .nav-links a {
         font-size: 18px; /* Taille originale conservée */
+    /*}
+    /* Style des textes dans le menu mobile */
+    .nav-links a {
+        font-size: 22px !important; /* Plus grand pour cliquer facilement avec le doigt */
+        color: #4b2e83 !important;   /* Violet plus foncé pour le contraste */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #f3e9ff; /* Petite ligne fine entre chaque lien */
+        padding-bottom: 5px;
+        width: 80%; /* Pour que la bordure ne touche pas les bords */
+        text-align: center;
     }
 
     /* CORRECTIF : Cache le logo "AB" quand le menu mobile est ouvert */
@@ -216,7 +227,7 @@ section {
 }
 
 .section-purple {
-    background: #c499ff;
+    background: #dcc5fc;
 }
 
 /* ==========================================================
