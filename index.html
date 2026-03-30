@@ -177,19 +177,6 @@
 <!-- ===== 6. MENU ===== -->
 <section id="menu" class="section-white">
     <h2>Le Menu</h2>
-    <div class="carousel-wrapper">
-        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        
-        <div class="carousel-container" id="carousel">
-            <div class="carousel-slide">
-                <img src="https://www.convention.fr/media/catalog/product/s/i/sig094_800px.png" alt="Entrée">
-                <img src="https://m.media-amazon.com/images/I/816IxNoSfVL.jpg" alt="Plat">
-                <img src="https://i.pinimg.com/736x/86/4c/69/864c692ceed0e7405c508e588908e7fa.jpg" alt="Dessert">
-            </div>
-        </div>
-
-        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
 
     <div class="menu-details">
         <p><strong>Entrée :</strong> Sortie</p>
@@ -215,11 +202,18 @@
 <!-- ===== 8. GALERIE PHOTOS ===== -->
 <section id="galerie" class="section-white">
     <h2>Galerie photos</h2>
+        <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-slide">
+                <img src="images/photo1.jpg" alt="Préparation 1">
+                <img src="images/photo2.jpg" alt="Préparation 2">
+                <img src="images/photo3.jpg" alt="Préparation 3">
+            </div>
+        </div>
 
-    <div class="gallery">
-        <img src="images/photo1.jpg" alt="Préparation 1">
-        <img src="images/photo2.jpg" alt="Préparation 2">
-        <img src="images/photo3.jpg" alt="Préparation 3">
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <!-- Bouton futur téléchargement -->
