@@ -77,7 +77,7 @@ p {
     width: auto;
     object-fit: contain;
     /* Le transform translate ajuste la position millimétrée (X, Y) */
-    transform: scale(1) translateY(2px); 
+    transform: scale(0.9) translateY(2px); 
     display: block;
 }
 
