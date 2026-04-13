@@ -167,21 +167,16 @@ p {
    4. HERO & SECTIONS (Style original conservé)
    ========================================================== */
 .hero {
-    /* On garde tes réglages de base */
-    background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    /* L'EFFET MAGIQUE : Fixe l'image pendant le scroll */
-    background-attachment: fixed; 
-    
+    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
     height: 100vh;
-    width: 100%;
+    position: relative;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+   
+    /* L'EFFET MAGIQUE : Fixe l'image pendant le scroll */
+    background-attachment: fixed; 
     
     /* Assure que la section suivante passe bien par-dessus */
     z-index: 1; 
