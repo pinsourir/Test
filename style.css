@@ -167,13 +167,24 @@ p {
    4. HERO & SECTIONS (Style original conservé)
    ========================================================== */
 .hero {
-    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
+    /* On garde tes réglages de base */
+    background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* L'EFFET MAGIQUE : Fixe l'image pendant le scroll */
+    background-attachment: fixed; 
+    
     height: 100vh;
-    position: relative;
-    color: white;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    
+    /* Assure que la section suivante passe bien par-dessus */
+    z-index: 1; 
 }
 
 .overlay {
@@ -410,9 +421,15 @@ footer {
 /* Correction Adaptabilité Mobile Globale (Style original conservé) */
 @media (max-width: 768px) {
     /* CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
-    .hero h1 {
+    .h1 {
         font-size: 3.5rem !important; 
     }
+   
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* On revient à un défilement normal sur mobile */
+    }
+}   
 
     .carousel-slide img {
         height: 450px; /* Un peu plus petit sur petit écran */
