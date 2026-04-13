@@ -186,6 +186,7 @@ p {
     background: rgba(0, 0, 0, 0.5);
     padding: 40px;
     border-radius: 10px;
+    size: cover;
 }
 
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
