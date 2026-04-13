@@ -419,15 +419,10 @@ footer {
 /* Correction Adaptabilité Mobile Globale (Style original conservé) */
 @media (max-width: 768px) {
     /* CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
-    .h1 {
+    .hero h1 {
         font-size: 3.5rem !important; 
     }
    
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll !important; /* On revient à un défilement normal sur mobile */
-    }
-}   
 
     .carousel-slide img {
         height: 450px; /* Un peu plus petit sur petit écran */
