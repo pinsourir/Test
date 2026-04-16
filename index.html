@@ -6,6 +6,10 @@
     <title>Mariage - Alicia & Bruno</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 <!-- ===== BANDEAU NAVIGATION ===== --> 
@@ -33,14 +37,14 @@
 <header id="accueil" class="hero">
     <div class="overlay">
         <h1>Alicia & Bruno</h1>
-        <p class="subtitle">Save the Date</p>
+        <p class="subtitle">Invitation</p>
         <p class="date">26 Août 2027</p>
         <p class="tagline">Une journée unique pour célébrer notre amour</p>
 
         <!-- Boutons navigation interne -->
         <div class="hero-buttons">
-            <a href="#programme" class="btn">Découvrir le mariage</a>
-            <a href="#histoire" class="btn">Découvrir notre histoire</a>
+            <a href="#lieux" class="btn">Lieu</a>
+            <a href="#infos" class="btn">Info</a>
         </div>
     </div>
 </header>
@@ -72,13 +76,8 @@
     
 <!-- ===== 2. NOTRE HISTOIRE ===== -->
 <section id="histoire" class="section-white">
-    <h2>Notre histoire</h2>
-    <p>
-        On a fait plein plein de truc!!!😌
-    </p>
-    <p>
-        Enfaite là on est fiancer!      Et avant ca, on c'est rencontrer au lycée.    ET JUSTE avant y'a eu ... ? la revolution 🤔...   Le crois que je suis aller trop loin😅!!
-    </p>
+    <h2 class="countdown-title">Notre histoire</h2>
+    <p class="countdown-subtitle">On a fait plein plein de truc!!!😌<br> Enfaite là on est fiancer! Et avant ca, on c'est rencontrer au lycée. ET JUSTE avant y'a eu ... ? la revolution 🤔... Le crois que je suis aller trop loin😅!!</p>
     <div class="gallery">
         <img src="image/eux1.jpg" alt="Photo d'eux 1">
         <img src="https://www.ville-saintgratien.fr/medias/2021/04/lycee-monod-scaled.jpg" alt="Photo d'eux 2">
@@ -88,52 +87,59 @@
 
 <!-- ===== 3. PROGRAMME (TIMELINE VERTICALE) ===== -->
 <section id="programme" class="section-purple">
-    <h2>Programme du mariage</h2>
-
+    <h2 class="countdown-title">Programme du mariage</h2>
+    
     <div class="timeline">
         <div class="timeline-item">
+            <img src="image/Mairie.png" class="photo-etape" alt="Mairie">
             <h3>Mairie</h3>
-            <p>14h00</p>
+            <p class="subtitles">14h00</p>
         </div>
 
         <div class="timeline-item">
+            <img src="image/eglise.png" class="photo-etape" alt="Cérémonie">
             <h3>Cérémonie</h3>
-            <p>15h30</p>
+            <p class="subtitles">15h30</p>
         </div>
-
+        
         <div class="timeline-item">
+            <img src="image/domaine.png" class="photo-etape" alt="Arrivée au domaine">
             <h3>Arrivée au domaine</h3>
-            <p>17h00</p>
+            <p class="subtitles">17h00</p>
         </div>
-
+        
         <div class="timeline-item">
+            <img src="image/cocktail.png" class="photo-etape" alt="Cocktail">
             <h3>Cocktail</h3>
-            <p>17h30</p>
+            <p class="subtitles">17h30</p>
         </div>
-
+        
         <div class="timeline-item">
+            <img src="image/diner.png" class="photo-etape" alt="Dîner">
             <h3>Dîner</h3>
-            <p>19h30 – Repas assis, thème champêtre chic ou alors dinosaure🦖</p>
+            <p class="subtitles">19h30 — Repas assis, thème champêtre chic</p>
         </div>
-
+        
         <div class="timeline-item">
+            <img src="image/bal.png" class="photo-etape" alt="Bal">
             <h3>Ouverture du bal (en mode Cendrillon)</h3>
-            <p>22h30</p>
+            <p class="subtitles">22h30</p>
         </div>
-
+        
         <div class="timeline-item">
+            <img src="image/bed.png" class="photo-etape" alt="Fin de soirée">
             <h3>Fin de soirée</h3>
-            <p>23h59 (Cendrillon jusqu'au bout)✨</p>
+            <p class="subtitles">23h59 (Cendrillon jusqu'au bout) ✨</p>
         </div>
-    </div>
+    </div> 
 </section>
 
 <!-- ===== 4. LES LIEUX ===== -->
 <section id="lieux" class="section-white">
-    <h2>Les lieux</h2>
+    <h2 class="countdown-title">Les lieux</h2>
     <h3>Le domaine des 3 voyages</h3>
 
-    <!-- Galerie photos du lieu -->
+    <!-- photos des lieux -->
     <div class="gallery">
         <img src="https://www.ville-domont.fr/var/www/storage/images/mediatheque/ville-de-domont/images/agenda/tuile-agenda-eglise/32654-1-fre-FR/TUILE-AGENDA-Eglise.jpg" alt="Photo lieu 1">
         <img src="https://www.ville-domont.fr/var/www/storage/images/mediatheque/ville-de-domont/images/agenda/mairie-domont-fermeture-services-municipaux-site/15067-1-fre-FR/Mairie-Domont-fermeture-services-municipaux-site.jpg" alt="Photo lieu 2">
@@ -141,7 +147,7 @@
     </div>
 
 
-    <p><strong>Adresse :</strong> domaine des 3 voyages, 7 Rue de Pacy, 27640 Merey</p>
+    <p class="texte"><strong>Adresse :</strong> domaine des 3 voyages, 7 Rue de Pacy, 27640 Merey</p>
 
     <!-- Google Maps intégré (remplacer l’adresse) -->
    
@@ -154,41 +160,66 @@
         loading="lazy">
     </iframe>
     
-    <p>Conseils d’accès : parking disponible sur place.</p>
+    <p class="texte">Conseils d’accès : parking disponible sur place.</p>
 </section>
 
 <!-- ===== 5. INFORMATIONS PRATIQUES ===== -->
 <section id="infos" class="section-purple">
-    <h2>Informations pratiques</h2>
-    <p>Hébergements possible sur place, parkings, contact témoin, météo probable…🙏🏻🤞🏻</p>
+    <h2 class="countdown-title"> Informations pratiques</h2>
+    <p class="subtitles">Hébergements possible sur place, parkings, contact témoin, météo probable…🙏🏻🤞🏻</p>
 
     <h3>FAQ</h3>
 
-    <p><strong>Puis-je venir avec mes enfants ?</strong><br>
-    Selon le nombre indiqué sur votre invitation.</p>
+    <p><strong>Quelle est le thème ?</strong></p>
+    <p class="countdown-subtitle">Jardin d'été.</p>
+        <div class="color-palette">
+            <p>Palette suggérée (ATTENTION pas de blanc SVP) :</p>
+            <div class="swatches">
+                <div class="swatch color-1"></div>
+                <div class="swatch color-2"></div>
+                <div class="swatch color-3"></div>
+                <div class="swatch color-4"></div>
+                <div class="swatch color-5"></div>
+            </div>
+        </div>
 
-    <p><strong>Y a-t-il un parking ?</strong><br>
-    Oui.</p>
+    <p><strong>Y a-t-il un parking ?</strong></p>
+    <p class="subtitles">Oui.</p>
 
-    <p><strong>À quelle heure se termine la soirée ?</strong><br>
-    23h59… Cendrillon oblige.</p>
+    <p><strong>À quelle heure se termine la soirée ?</strong></p>
+    <p class="subtitles">23h59… Cendrillon oblige.</p>
 </section>
 
 <!-- ===== 6. MENU ===== -->
 <section id="menu" class="section-white">
-    <h2>Le Menu</h2>
+    <h2 class="countdown-title">Le Menu</h2>
 
     <div class="menu-details">
-        <p><strong>Entrée :</strong> Sortie</p>
-        <p><strong>Plat :</strong> Ondulé</p>
-        <p><strong>Dessert :</strong> Un GROS GATEAU 🎂</p>
+        <h3>Entrée :</h3>
+        <p class="texte">Le Bouquet de Vergers en Julienne de l'Oncle Sam Fines bâtonnets de tubercules sélectionnés,<br> 
+            plongés dans un bain d'huile végétale pressée à chaud, sublimés par une pluie de cristaux de mer des Salins.<br> 
+            Accompagnés de leur émulsion de tomates de Provence au sucre de canne et d'un velouté d’œufs monté à l’huile de colza et pointe de moutarde.<br>
+            </p>
+        <h3>Plat :</h3>
+        <p class="texte">La Trilogie de Bœuf Charolais sous son Écrin de Froment au Sésame Double médaillon de bœuf haché,<br> 
+            saisi à la plancha, déposé sur un lit de laitue ciselée et de cornichons croquants de l'Appenzell.<br> 
+            Le tout est lié par une sauce secrète aux aromates ancestraux et nappé d'une fine tranche de cheddar affiné,<br> 
+            niché entre deux disques de pain brioché aux graines de sésame torréfiées.<br></p>
+            
+        <h3>Dessert :</h3>
+        <p class="texte">La Caresse de Givre Lacté et son Coulis de Cacao Intense Crème glacée onctueuse élaborée à partir de lait frais de pâturages,<br> 
+            fouettée pour une légèreté aérienne, agrémentée de brisures de biscuits sablés au chocolat noir et nappée d’un nappage onctueux au cacao pur beurre de karité.<br></p>
+            
+         <h3>Le Conseil du Sommelier :</h3>
+         <p class="texte">La Cuvée Pétillante de l'Atlantique, robe ambrée et bulles de caramel.<br></p>
+        
     </div>
 </section>
     
 <!-- ===== 7. CONFIRMATION DE PRÉSENCE (GOOGLE FORM) ===== -->
 <section class="rsvp">
-    <h2>Confirmation de présence</h2>
-    <p>Merci de respecter le nombre de personnes indiqué sur votre invitation.</p>
+    <h2 class="countdown-title">Confirmation de présence</h2>
+    <p class="countdown-subtitle">Merci de respecter l'orde [NOM PRENOM].</p>
 
     <!-- Google Form intégré -->
     <iframe 
@@ -201,7 +232,7 @@
 
 <!-- ===== 8. GALERIE PHOTOS ===== -->
 <section id="galerie" class="section-white">
-    <h2>Galerie photos</h2>
+    <h2 class="countdown-title">Galerie photos</h2>
         <div class="carousel-wrapper">
         <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
         
