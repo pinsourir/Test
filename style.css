@@ -304,22 +304,23 @@ section {
 /* --- Ajustement Mobile (pour ne pas que les images sortent de l'écran) --- */
 @media (max-width: 768px) {
     .timeline {
-        margin-left: 80px; /* On décale tout vers la droite sur mobile */
-        margin-right: 20px;
+        /* On garde une marge importante à gauche pour laisser de la place aux icônes */
+        margin-left: 80px; 
+        margin-right: 15px;
+        padding-left: 20px; /* On réduit un peu l'espace texte/barre sur mobile */
     }
     
     .photo-etape {
-        left: -70px; /* On les rapproche un peu de la barre sur petit écran */
-        width: 50px;/* Taille sur mobile */
+        /* On augmente le décalage négatif : 
+           Puisque l'icône fait 50px, -60px la place à 10px de la barre */
+        left: -60px; 
+        width: 45px; /* Légèrement réduit (de 50 à 45) pour plus de confort visuel */
+        top: 0;
     }
-}
 
-/* --- Style du Texte (On garde ce que tu avais) --- */
-.timeline-item h3 {
-    color: #c9a1f7;
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    .timeline-item h3 {
+        font-size: 1.15rem; /* On réduit un peu le titre pour mobile */
+    }
 }
 
 .timeline-item .subtitles {
