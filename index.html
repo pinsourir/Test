@@ -78,21 +78,22 @@
 <section id="histoire" class="section-white">
     <h2 class="countdown-title">Notre histoire</h2>
     <p class="countdown-subtitle">On a fait plein plein de truc!!!😌<br> Enfaite là on est fiancer! Et avant ca, on c'est rencontrer au lycée. ET JUSTE avant y'a eu ... ? la revolution 🤔... Le crois que je suis aller trop loin😅!!</p>
-    <div class="gallery">
-        <img src="image/eux1.jpg" alt="Photo d'eux 1">
-        <img src="https://www.ville-saintgratien.fr/medias/2021/04/lycee-monod-scaled.jpg" alt="Photo d'eux 2">
-        <img src="https://www.civitatis.com/f/francia/paris/guia/historia.jpg" alt="Photo d'eux 3">
-    </div>
-</section>
-
-<section id="histoire" class="section-purple">
-    <h2 class="countdown-title">Notre Histoire</h2>
-    <div class="histoire-container">
-        <p class="subtitles">"Il était une fois..."</p>
-        <div class="histoire-texte">
-            <p>Ici, raconte en 4-5 lignes votre rencontre ou ce qui fait que vous êtes un duo inséparable aujourd'hui.</p>
+    <div class="histoire-cercle-container">
+    <div class="diaporama-cercle">
+        <div class="slide-histoire active">
+            <img src="https://www.ville-saintgratien.fr/medias/2021/04/lycee-monod-scaled.jpg" alt="Notre rencontre">
         </div>
+        <div class="slide-histoire">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkMERLtDBSKysAJFJ14BGrj26Fk7StxgMSg&s" alt="Premier voyage">
+        </div>
+        <div class="slide-histoire">
+            <img src="image/eux1.jpg" alt="La demande">
+        </div>
+
+        <button class="prev-histoire" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next-histoire" onclick="changeSlide(1)">&#10095;</button>
     </div>
+</div>
 </section>
 
 <!-- ===== 3. PROGRAMME (TIMELINE VERTICALE) ===== -->
