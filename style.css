@@ -572,13 +572,32 @@ footer {
     color: white;
 }
 
+/* Style de base pour l'image (Mobile first) */
 .img-lieu {
     width: 100%;
+    height: auto;
     border-radius: 15px;
     margin-bottom: 15px;
+    display: block;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* --- Correction Spéciale Ordinateur --- */
+@media (min-width: 769px) {
+    .lieu-content {
+        max-width: 700px; /* Évite que le texte et l'image s'étalent trop */
+        margin: 0 auto;   /* Centre tout le bloc */
+        padding: 20px;
+    }
+
+    .img-lieu {
+        max-height: 450px; /* Limite la hauteur pour ne pas scroller à l'infini */
+        width: auto;       /* Garde les proportions */
+        margin: 0 auto 20px auto;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Effet propre sur PC */
+    }
 }
