@@ -705,7 +705,7 @@ footer {
     position: absolute;        /* Positionne les flèches "sur" l'image */
     top: 50%;                  /* Aligne verticalement au centre */
     transform: translateY(-50%); /* Ajustement précis du centrage vertical */
-    /*background: rgba(255,255,255,0.7); /* Fond blanc transparent pour voir l'image derrière */
+    background: transparent; /* Fond blanc transparent pour voir l'image derrière */
     border: none;              /* Supprime la bordure par défaut du bouton */
     padding: 10px;             /* Taille de la zone cliquable */
     cursor: pointer;           /* Change le curseur en main au survol */
