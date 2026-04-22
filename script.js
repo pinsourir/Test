@@ -117,3 +117,28 @@ function toggleFAQ(button) {
 
     item.classList.toggle('active');
 }
+
+// ========= carousel notre histoire  ==========
+// ========= Nouveau CAROUSEL CERCLE (Histoire) ==========
+let indexHistoire = 0;
+
+function changeSlide(direction) {
+    const slides = document.querySelectorAll('.slide-histoire'); // On cible les slides du cercle
+    
+    // On cache la slide actuelle
+    slides[indexHistoire].classList.remove('active');
+    
+    // On calcule le nouvel index
+    indexHistoire += direction;
+
+    if (indexHistoire >= slides.length) {
+        indexHistoire = 0;
+    } else if (indexHistoire < 0) {
+        indexHistoire = slides.length - 1;
+    }
+
+    // On affiche la nouvelle slide
+    slides[indexHistoire].classList.add('active');
+}
+// Fait tourner le cercle automatiquement toutes les 5 secondes
+setInterval(() => changeSlide(1), 5000);
