@@ -2,37 +2,31 @@
    1. BASES & TYPOGRAPHIE
    ========================================================== */
 * {
-    box-sizing: border-box; /* Empêche les bordures et paddings de faire déborder les éléments */
+    box-sizing: border-box; /* Crucial pour que les paddings ne cassent pas la structure */
 }
 
 body {
     margin: 0;
-    padding-top: 70px; /* Espace pour le menu fixe */
+    padding-top: 70px;
     font-family: 'Playfair Display', serif; /* Police chic principale */
     background-color: #fff5f8;
     color: #333;
     text-align: center;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Supprime le scroll horizontal */
-}
-
-h1 {
-   font-family: "Mrs Saint Delafield", cursive; /* Police cursive pour Alicia & Bruno */
-   font-size: 6rem;
-   color: white;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden; /* Empêche le scroll horizontal parasite */
 }
 
 h2 {
     margin-bottom: 20px;
     margin-top: 10px;
-    color: #4b2e83; 
-    font-size: 2.8rem; /* CORRECTIF : Titres h2 plus grands pour plus d'impact */
+    font-family: 'Playfair Display', serif;
+    color: #4b2e83; /* Violet foncé */
 }
 
 h3 {
     margin-bottom: 20px;
     margin-top: 10px;
+    font-family: 'Playfair Display', serif;
     color: #c9a1f7; /* Violet clair */
 }
 
@@ -43,10 +37,9 @@ h3 {
 }
 
 .subtitles {
-    color: #777; /* CORRECTIF : Texte calligraphié gris */
+    color: #777;
     margin-bottom: 10px;
-    font-style: italic;
-    font-family: 'Mrs Saint Delafield', cursive; /* CORRECTIF : Mrs Saint Delafield pour subtitles */
+    font-style: italic; /* Texte calligraphié gris */
 }
 
 p {
@@ -60,7 +53,7 @@ p {
 }
 
 /* ==========================================================
-   2. LA NAVIGATION (Barre de menu)
+   2. LA NAVIGATION (Rétablie)
    ========================================================== */
 .navbar {
     position: fixed;
@@ -72,38 +65,50 @@ p {
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 1000;
+    padding: 0 20px;
 }
 
 .navbar-logo {
     position: absolute;
     left: 30px; 
     height: 70px;
+    width: 100px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    text-decoration: none;
 }
 
 .navbar-logo img {
     height: 100px;
+    width: auto;
+    object-fit: contain;
     transform: scale(0.9) translateY(2px); 
+    display: block;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     width: 80%;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /* RÉPARTITION SUR LA LONGUEUR */
+    margin: 0; padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #c499ff !important;
+    color: #c499ff !important; /* Violet de base */
     font-weight: bold;
-    transition: 0.3s;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover { color: #8a5fd3 !important; }
+.nav-links a:hover {
+    color: #8a5fd3 !important;
+}
 
-/* Bouton Hamburger mobile */
 .hamburger {
     display: none; 
     font-size: 30px;
@@ -113,7 +118,7 @@ p {
     right: 20px;
 }
 
-/* --- Menu Mobile --- */
+/* --- ADAPTATION MOBILE NAVIGATION --- */
 @media (max-width: 900px) {
     .hamburger { display: block !important; }
 
@@ -125,34 +130,64 @@ p {
         width: 100%; height: 100vh;
         background-color: white; 
         justify-content: center;
+        align-items: center;
+        gap: 20px;
         z-index: 5000;
     }
 
     .nav-links.open { display: flex !important; }
 
+    .nav-links li { width: 100%; text-align: center; }
+
     .nav-links a {
         font-size: 22px !important;
+        color: #4b2e83 !important;
         text-transform: uppercase;
         border-bottom: 1px solid #f3e9ff;
-        padding: 10px;
+        padding-bottom: 5px;
+        width: 80%;
     }
 
-    /* Cache le logo quand le menu est ouvert */
+    /* Cache le logo quand le menu plein écran est ouvert */
     .nav-links.open ~ .navbar-logo { display: none; }
 }
 
 /* ==========================================================
-   3. HERO (Image fixe d'accueil)
-   ========================================================= */
+   3. HERO & SECTIONS
+   ========================================================== */
 .hero {
     background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
     height: 100vh;
-    background-attachment: fixed; /* Image fixe au scroll */
+    position: relative;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed; /* EFFET FIXE */
+    z-index: 1;
 }
 
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+   font-family: "Mrs Saint Delafield", cursive;
+   font-weight: 400;
+   font-size: 6rem;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-title, .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.date { font-size: 1.3rem; margin-top: 10px; }
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -160,9 +195,9 @@ p {
     background-color: #c499ff;
     color: white;
     text-decoration: none;
+    margin: 10px;
     transition: 0.3s;
 }
-
 .btn:hover { background-color: #dcc5fc; }
 
 section { padding: 100px 20px; }
@@ -173,183 +208,254 @@ section { padding: 100px 20px; }
 }
 
 /* ==========================================================
-   4. TIMELINE (Programme vertical)
+   4. TIMELINE (Programme)
    ========================================================== */
 .timeline {
     max-width: 600px;
     margin: 40px auto;
-    border-left: 4px solid #4b2e83; /* La barre verticale */
+    border-left: 4px solid #4b2e83; 
     padding-left: 35px;
     position: relative;
     text-align: left;
 }
 
+.timeline-item { margin-bottom: 40px; position: relative; }
+
 .photo-etape {
     position: absolute;
-    left: -100px; /* Icône à gauche de la barre */
-    width: 60px;
+    left: -100px; 
+    top: -5px;   
+    width: 60px; 
+    height: auto;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.9; 
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
 }
 
 @media (max-width: 768px) {
-    .timeline { margin-left: 80px; } 
+    .timeline { margin-left: 80px; margin-right: 15px; }
     .photo-etape { left: -75px; width: 45px; }
 }
 
 /* ==========================================================
-   5. COMPTE À REBOURS
-   ========================================================= */
+   5. COMPTE À REBOURS LUXE (Réparé)
+   ========================================================== */
+.countdown-luxe {
+    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center; /* Centre les blocs côte à côte */
+    gap: 40px; /* Espace entre les blocs */
+    flex-wrap: wrap; /* Empile sur mobile uniquement */
+}
+
 .time-box {
-    background: white;
+    background: white; /* Fond blanc propre */
     padding: 30px 25px;
     border-radius: 20px;
     min-width: 120px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Petit relief élégant */
+    position: relative;
+    overflow: hidden;
 }
 
 .time-box span {
     font-size: 2.8rem;
     font-weight: bold;
     color: #c499ff;
+    display: inline-block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.countdown-title {
-    font-family: 'Mrs Saint Delafield', cursive; /* CORRECTIF : Mrs Saint Delafield pour countdown-title */
-    font-size: 2.5rem;
+.time-box small {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    letter-spacing: 1px;
 }
 
-/* ================= =========================================
+/* ==========================================================
    6. CARROUSEL GALERIE (Bas de page)
    ========================================================== */
+.carousel-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+}
+
 .carousel-container {
     width: 100%;
-    overflow: hidden; /* Cache les photos qui débordent */
+    overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .carousel-slide {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Animation de glissement */
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide img {
-    width: 100%; /* Une seule photo visible */
+    width: 100%;
+    flex-shrink: 0;
     height: 600px;
-    object-fit: cover; /* Remplit le cadre sans déformer */
+    object-fit: cover;
 }
 
 .carousel-btn {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.8);
     border: none;
     width: 40px; height: 40px;
     border-radius: 50%;
     cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
     color: #4b2e83;
 }
 
+.prev { left: -20px; }
+.next { right: -20px; }
+
+@media (max-width: 768px) {
+    .carousel-slide img { height: 450px; }
+    .prev { left: 5px; }
+    .next { right: 5px; }
+}
+
 /* ==========================================================
-   7. LIEUX (Onglets Mairie/Eglise/Domaine)
+   7. LIEUX (Système d'onglets)
    ========================================================== */
-.lieu-content { display: none; } /* Cache tout par défaut */
-.lieu-content.active { display: block; } /* Affiche seulement le lieu actif */
+.lieu-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.lieu-content.active { display: block; }
+
+.lieu-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
 .tab-btn {
     padding: 10px 20px;
     border: 2px solid #4b2e83;
     background: white;
+    color: #4b2e83;
     cursor: pointer;
     border-radius: 20px;
-    color: #4b2e83;
+    font-family: 'Playfair Display', serif;
+    flex: 1;
+    max-width: 120px;
 }
 
 .tab-btn.active { background: #4b2e83; color: white; }
 
+.img-lieu {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 769px) {
+    .lieu-content { max-width: 700px; margin: 0 auto; padding: 20px; }
+    .img-lieu { max-height: 450px; width: auto; margin: 0 auto 20px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+}
+
 /* ==========================================================
    8. FAQ (Style Google)
    ========================================================== */
-.faq-answer {
-    max-height: 0; /* Fermé par défaut */
-    overflow: hidden;
-    transition: max-height 0.3s ease-out; /* Animation d'ouverture */
+.faq-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.faq-item { border-bottom: 1px solid #ddd; }
+.faq-question {
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #4b2e83;
+    cursor: pointer;
 }
-
-.faq-item.active .faq-answer { max-height: 300px; } /* Hauteur de l'accordéon ouvert */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-item.active .faq-answer { max-height: 500px; } /* Ouvre l'accordéon */
 
 /* ==========================================================
-   9. CARROUSEL CIRCULAIRE (Notre Histoire)
+   9. CARROUSEL CIRCULAIRE (Réparé & Centré)
    ========================================================== */
-.diaporama-cercle {
-    position: relative;
-    width: 280px; height: 280px;
-    border-radius: 50%; /* Crée le rond parfait */
-    overflow: hidden;
-    border: 3px solid #4b2e83;
+.histoire-cercle-container {
+    display: flex;
+    justify-content: center; /* Centre le cercle horizontalement */
+    margin: 40px 0;
 }
 
-.slide-histoire { display: none; }
+.diaporama-cercle {
+    position: relative;
+    width: 280px; /* Taille fixée */
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #4b2e83; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.slide-histoire { display: none; width: 100%; height: 100%; }
 .slide-histoire.active { display: block; animation: fadeEffect 1s; }
+.slide-histoire img { width: 100%; height: 100%; object-fit: cover; }
 
 .prev-histoire, .next-histoire {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: transparent;
     border: none;
-    color: white; /* Blanc pour la visibilité */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Ombre pour la lisibilité */
+    padding: 10px;
     cursor: pointer;
+    color: white; /* Blanc pour lire sur photo */
     font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    z-index: 10;
 }
+.prev-histoire { left: 10px; }
+.next-histoire { right: 10px; }
 
 /* ==========================================================
-   10. CONFIRMATION DE PRÉSENCE (RSVP)
+   10. PALETTE DE COULEURS & FOOTER
    ========================================================== */
-.rsvp {
-    background-color: #f3e9ff; /* CORRECTIF : Fond violet très pâle élégant (image 2) */
-    color: #4b2e83;
-    padding: 80px 20px;
-}
-
-.rsvp h2 {
-    color: #4b2e83;
-    font-family: 'Mrs Saint Delafield', cursive; /* CORRECTIF : Mrs Saint Delafield pour RSVP h2 (image 3) */
-}
-
-/* ==========================================================
-   11. PALETTE DE COULEURS & FOOTER
-   ========================================================== */
+.swatches { display: flex; justify-content: center; gap: 15px; }
 .swatch {
     width: 60px; height: 60px;
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 .color-1 { background-color: #616e53; }
 .color-2 { background-color: #929a8a; }
 .color-3 { background-color: #ba9a92; }
 .color-4 { background-color: #f7d6d1; }
 .color-5 { background-color: #fceae8; }
 
-footer { background: #c499ff; padding: 20px; color: white; }
+footer { padding: 20px; background: #c499ff; color: white; }
 
-/* --- ANIMATIONS (Fade In / Fondu) --- */
+/* --- ANIMATIONS (Vitales) --- */
 @keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-```/=== Fleche du CAROUSEL  ==========
-let currentIndex = 0;
-
-function moveSlide(direction) {
-    const slide = document.getElementById('carousel').querySelector('.carousel-slide');
-    const totalSlides = slide.querySelectorAll('img').length;
-    
-    currentIndex += direction;
-
-    if (currentIndex >= totalSlides) {
-        currentIndex = 0;
-    } else if (currentIndex < 0) {
-        currentIndex = totalSlides - 1;
-    }
-
-    const offset = -currentIndex * 100;
-    slide.style.transform = `translateX(${offset}%)`;
-}
