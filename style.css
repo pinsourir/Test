@@ -21,6 +21,444 @@ h2 {
     margin-top: 10px;
     font-family: 'Playfair Display', serif;
     color: #4b2e83; /* Violet foncé */
+    font-size: 2.8rem; /* RÉTABLI : Taille plus grande pour les titres */
+}
+
+h3 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    color: #c9a1f7; /* Violet clair */
+}
+
+.texte {
+    color: #000;
+    margin-bottom: 10px;
+    font-style: italic; /* Texte calligraphié noir */
+}
+
+/* CORRECTIF : Style pour "Notre histoire" et "Compte à rebours" */
+.subtitles, .countdown-title {
+    color: #777 !important; /* Gris comme sur tes captures */
+    margin-bottom: 10px;
+    font-style: italic !important;
+    font-family: 'Mrs Saint Delafield', cursive !important; /* Police manuscrite */
+    font-size: 2.2rem;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+#menu p {
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+/* ==========================================================
+   2. LA NAVIGATION
+   ========================================================== */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 30px; 
+    height: 70px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transform: scale(0.9) translateY(2px); 
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: 0; padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c499ff !important;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8a5fd3 !important;
+}
+
+.hamburger {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+    color: #c499ff;
+    position: absolute;
+    right: 20px;
+}
+
+/* --- ADAPTATION MOBILE NAVIGATION --- */
+@media (max-width: 900px) {
+    .hamburger { display: block !important; }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100vh;
+        background-color: white; 
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 5000;
+    }
+
+    .nav-links.open { display: flex !important; }
+
+    .nav-links li { width: 100%; text-align: center; }
+
+    .nav-links a {
+        font-size: 22px !important;
+        color: #4b2e83 !important;
+        text-transform: uppercase;
+        border-bottom: 1px solid #f3e9ff;
+        padding-bottom: 5px;
+        width: 80%;
+    }
+
+    .nav-links.open ~ .navbar-logo { display: none; }
+}
+
+/* ==========================================================
+   3. HERO & SECTIONS
+   ========================================================== */
+.hero {
+    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+   font-family: "Mrs Saint Delafield", cursive;
+   font-weight: 400;
+   font-size: 6rem;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.date { font-size: 1.3rem; margin-top: 10px; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: #c499ff;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+.btn:hover { background-color: #dcc5fc; }
+
+section { padding: 100px 20px; }
+.section-white { background: white; }
+.section-purple {
+    background: linear-gradient(to bottom, #ffffff, #f3e9ff);
+    color: #4b2e83;
+}
+
+/* ==========================================================
+   4. TIMELINE (Programme)
+   ========================================================== */
+.timeline {
+    max-width: 600px;
+    margin: 40px auto;
+    border-left: 4px solid #4b2e83; 
+    padding-left: 35px;
+    position: relative;
+    text-align: left;
+}
+
+.timeline-item { margin-bottom: 40px; position: relative; }
+
+.photo-etape {
+    position: absolute;
+    left: -100px; 
+    top: -5px;   
+    width: 60px; 
+    height: auto;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.9; 
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 768px) {
+    .timeline { margin-left: 80px; margin-right: 15px; }
+    .photo-etape { left: -75px; width: 45px; }
+}
+
+/* ==========================================================
+   5. COMPTE À REBOURS
+   ========================================================== */
+.countdown-luxe {
+    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    min-width: 120px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.time-box span {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #c499ff;
+    display: inline-block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.time-box small {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================
+   6. CARROUSEL GALERIE
+   ========================================================== */
+.carousel-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    flex-shrink: 0;
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    color: #4b2e83;
+}
+
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* ==========================================================
+   7. LIEUX & RSVP (Correctif Couleurs)
+   ========================================================== */
+.lieu-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.lieu-content.active { display: block; }
+
+.tab-btn {
+    padding: 10px 20px;
+    border: 2px solid #4b2e83;
+    background: white;
+    color: #4b2e83;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    flex: 1;
+    max-width: 120px;
+}
+
+.tab-btn.active { background: #4b2e83; color: white; }
+
+/* CORRECTIF : Suppression du rose sur la partie RSVP */
+.section-rsvp {
+    background-color: #f3e9ff !important; /* Violet très pâle */
+}
+
+/* ==========================================================
+   8. FAQ
+   ========================================================== */
+.faq-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.faq-item { border-bottom: 1px solid #ddd; }
+.faq-question {
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #4b2e83;
+    cursor: pointer;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-item.active .faq-answer { max-height: 500px; }
+
+/* ==========================================================
+   9. CARROUSEL CIRCULAIRE
+   ========================================================== */
+.histoire-cercle-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.diaporama-cercle {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #4b2e83; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.slide-histoire { display: none; width: 100%; height: 100%; }
+.slide-histoire.active { display: block; animation: fadeEffect 1s; }
+.slide-histoire img { width: 100%; height: 100%; object-fit: cover; }
+
+.prev-histoire, .next-histoire {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+.prev-histoire { left: 10px; }
+.next-histoire { right: 10px; }
+
+/* ==========================================================
+   10. PALETTE & FOOTER
+   ========================================================== */
+.swatches { display: flex; justify-content: center; gap: 15px; }
+.swatch {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.color-1 { background-color: #616e53; }
+.color-2 { background-color: #929a8a; }
+.color-3 { background-color: #ba9a92; }
+.color-4 { background-color: #f7d6d1; }
+.color-5 { background-color: #fceae8; }
+
+footer { padding: 20px; background: #c499ff; color: white; }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeEffect { from { opacity: 0.4; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }/* ==========================================================
+   1. BASES & TYPOGRAPHIE
+   ========================================================== */
+* {
+    box-sizing: border-box; /* Crucial pour que les paddings ne cassent pas la structure */
+}
+
+body {
+    margin: 0;
+    padding-top: 70px;
+    font-family: 'Playfair Display', serif; /* Police chic principale */
+    background-color: #fff5f8;
+    color: #333;
+    text-align: center;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Empêche le scroll horizontal parasite */
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    color: #4b2e83; /* Violet foncé */
 }
 
 h3 {
