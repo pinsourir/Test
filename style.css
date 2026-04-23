@@ -148,9 +148,14 @@ p {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5); /* Ton gris transparent */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Optionnel : pour que le texte ne touche pas les bords sur tel */
 }
 
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
