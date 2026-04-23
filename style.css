@@ -128,53 +128,7 @@ p {
     z-index: 5001;
 }
 
-/* ==========================================================
-   3. ADAPTATION MOBILE (Rétablie comme avant)
-   ========================================================== */
-@media (max-width: 900px) {
-    .hamburger {
-        display: block !important; /* Le burger apparaît sur tel */
-    }
 
-    .nav-links {
-        display: none; /* Caché par défaut */
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100vh;
-        background-color: white; /* Fond blanc uni, comme avant */
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        z-index: 5000;
-    }
-
-    .nav-links.open {
-        display: flex !important;
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Style des textes dans le menu mobile */
-    .nav-links a {
-        font-size: 22px !important; /* Plus grand pour cliquer facilement avec le doigt */
-        color: #4b2e83 !important;   /* Violet plus foncé pour le contraste */
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-bottom: 1px solid #f3e9ff; /* Petite ligne fine entre chaque lien */
-        padding-bottom: 5px;
-        width: 80%; /* Pour que la bordure ne touche pas les bords */
-        text-align: center;
-    }
-
-    /* CORRECTIF : Cache le logo "AB" quand le menu mobile est ouvert */
-    .nav-links.open ~ .nav-logo-container {
-        display: none;
-    }
-}
 
 /* ==========================================================
    4. HERO & SECTIONS (Style original conservé)
@@ -299,26 +253,7 @@ section {
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
 }
 /* --- Ajustement Mobile (pour ne pas que les images sortent de l'écran) --- */
-@media (max-width: 768px) {
-    .timeline {
-        /* On garde une marge importante à gauche pour laisser de la place aux icônes */
-        margin-left: 80px; 
-        margin-right: 15px;
-        padding-left: 20px; /* On réduit un peu l'espace texte/barre sur mobile */
-    }
-    
-    .photo-etape {
-        /* On augmente le décalage négatif : 
-           Puisque l'icône fait 50px, -60px la place à 10px de la barre */
-        left: -75px; 
-        width: 45px; /* Légèrement réduit (de 50 à 45) pour plus de confort visuel */
-        top: 0;
-    }
 
-    .timeline-item h3 {
-        font-size: 1.15rem; /* On réduit un peu le titre pour mobile */
-    }
-}
 
 .timeline-item .subtitles {
     margin-top: 3px;
@@ -496,9 +431,75 @@ footer {
 .color-4 { background-color: #f7d6d1; } /* Rose Pâle Romantique (Le plus bas) */
 .color-5 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
 
+/* ==========================================================
+   3. ADAPTATION MOBILE (Rétablie comme avant)
+   ========================================================== */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block !important; /* Le burger apparaît sur tel */
+    }
+
+    .nav-links {
+        display: none; /* Caché par défaut */
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100vh;
+        background-color: white; /* Fond blanc uni, comme avant */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 5000;
+    }
+
+    .nav-links.open {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Style des textes dans le menu mobile */
+    .nav-links a {
+        font-size: 22px !important; /* Plus grand pour cliquer facilement avec le doigt */
+        color: #4b2e83 !important;   /* Violet plus foncé pour le contraste */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #f3e9ff; /* Petite ligne fine entre chaque lien */
+        padding-bottom: 5px;
+        width: 80%; /* Pour que la bordure ne touche pas les bords */
+        text-align: center;
+    }
+
+    /* CORRECTIF : Cache le logo "AB" quand le menu mobile est ouvert */
+    .nav-links.open ~ .nav-logo-container {
+        display: none;
+    }
+}
 /* Correction Adaptabilité Mobile Globale (Style original conservé) */
 @media (max-width: 768px) {
-     CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
+   .timeline {
+        /* On garde une marge importante à gauche pour laisser de la place aux icônes */
+        margin-left: 80px; 
+        margin-right: 15px;
+        padding-left: 20px; /* On réduit un peu l'espace texte/barre sur mobile */
+    }
+    
+    .photo-etape {
+        /* On augmente le décalage négatif : 
+           Puisque l'icône fait 50px, -60px la place à 10px de la barre */
+        left: -75px; 
+        width: 45px; /* Légèrement réduit (de 50 à 45) pour plus de confort visuel */
+        top: 0;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.15rem; /* On réduit un peu le titre pour mobile */
+    }
+
+     /*CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
     .hero h1 {
         font-size: 3.5rem !important; 
     }
