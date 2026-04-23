@@ -668,6 +668,13 @@ footer {
 }
 /* Correction Adaptabilité Mobile Globale (Style original conservé) */
 @media (max-width: 768px) {
+   .hero {
+        /* On remplace l'image uniquement pour le téléphone */
+        background-image: url('image/back.jpg') !important;
+        
+        /* Optionnel : on ajuste la position pour que vos visages soient bien centrés */
+        background-position: center center; 
+    }
    .timeline {
         /* On garde une marge importante à gauche pour laisser de la place aux icônes */
         margin-left: 80px; 
