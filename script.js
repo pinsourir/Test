@@ -117,3 +117,65 @@ function toggleFAQ(button) {
 
     item.classList.toggle('active');
 }
+
+// ==========================================================
+// GESTION DE L'OUVERTURE DE L'ENVELOPPE AU CLIC
+// ==========================================================
+
+// 1. Fonction qui génère la pluie de confettis dorés
+function createConfetti() {
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.top = '-10px';
+    
+    // Nuances de couleurs dorées/champagne
+    const colors = ['#d4af37', '#f5deb3', '#e6be8a', '#c5a059'];
+    c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(c);
+
+    const duration = 2000 + Math.random() * 3000;
+    const rotation = Math.random() * 360;
+
+    // Animation de chute des confettis
+    c.animate([
+      { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+      { transform: `translateY(100vh) rotate(${rotation}deg)`, opacity: 0 }
+    ], { 
+      duration: duration, 
+      easing: 'cubic-bezier(.25, .46, .45, .94)' 
+    }).onfinish = () => c.remove(); // Supprime le confetti de la mémoire une fois en bas
+  }
+}
+
+// 2. Écouteur de clic sur le cachet de cire
+document.getElementById('wax-seal').addEventListener('click', () => {
+  const container = document.getElementById('envelope-container');
+  
+  // Déclenche l'écartement des volets blancs en CSS
+  document.getElementById('envelope').classList.add('opened');
+  container.classList.add('opened');
+  
+  // Fait disparaître immédiatement le bouton du cachet
+  document.getElementById('wax-seal').style.display = 'none';
+  
+  // Lance les confettis un tout petit peu après (400ms)
+  setTimeout(createConfetti, 400);
+
+  // Fait disparaître proprement tout le conteneur en fondu
+  setTimeout(() => {
+    container.style.opacity = '0';
+    
+    // Une fois invisible, on le retire totalement de l'écran pour pouvoir cliquer sur le site
+    setTimeout(() => { 
+        container.style.display = 'none'; 
+        document.body.style.overflow = 'auto'; // Réactive le scroll du site
+    }, 1200);
+  }, 2200);
+});
+
+// Affiche le texte du cachet dès que les polices d'écriture sont prêtes
+document.fonts.ready.then(() => {
+  document.querySelector('.curved-text-svg').style.opacity = '1';
+});
