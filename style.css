@@ -654,3 +654,95 @@ footer {
         padding: 20px;
     }
 }
+
+/* ==========================================================
+   test enveloppe
+   ========================================================== */
+/* ================= BUSTA E OMBRE ================= */
+#envelope-container{
+  position:fixed;
+  inset:0;
+  background:#ffffff; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:100;
+  transition: opacity 1.2s ease;
+}
+
+.envelope{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  overflow: hidden;
+}
+
+.envelope-left,
+.envelope-right{
+  height:100%;
+  background:#ffffff;
+  transition: transform 1.8s cubic-bezier(.645, .045, .355, 1);
+}
+
+.envelope-left {
+  width: 50%;
+  z-index: 1;
+  border-right: 1px solid #eeeeee;
+}
+
+.envelope-right {
+  width: 51%; 
+  margin-left: -1%; 
+  z-index: 2;
+  box-shadow: -25px 0 50px rgba(0,0,0,0.2), -10px 0 15px rgba(0,0,0,0.1); 
+  border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.opened .envelope-left { transform: translateX(-100%); }
+.opened .envelope-right { transform: translateX(100%); }
+
+/* ================= SIGILLO PULSANTE ================= */
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+#wax-seal{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:110;
+  cursor:pointer;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 2.5s infinite ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#wax-seal img {
+  position: absolute;
+  width: 160px; 
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+
+.curved-text-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.curved-text-svg text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  fill: #8e7341;
+  letter-spacing: 1px;
+}
