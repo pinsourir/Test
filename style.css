@@ -658,6 +658,7 @@ footer {
 /* ==========================================================
    ANIMATIONS ET OUVERTURE DE L'ENVELOPPE
    ========================================================== */
+
 /* Bloquer le défilement de la page tant que l'enveloppe est fermée */
 body {
     overflow-x: hidden;
