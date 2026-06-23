@@ -108,7 +108,7 @@ p {
 
 .nav-links a {
     text-decoration: none;
-    color: #c499ff !important; /* Ton violet de base */
+    color: #9fc7a6 !important; /* Ton violet de base */
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 1px;
@@ -124,7 +124,7 @@ p {
     display: none; 
     font-size: 30px;
     cursor: pointer;
-    color: #c499ff;
+    color: #9fc7a6;
     position: absolute;
     right: 20px; /* À droite, comme avant */
     top: 50%;
@@ -191,7 +191,7 @@ p {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 25px;
-    background-color: #c499ff;
+    background-color: #9fc7a6;
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -277,7 +277,7 @@ section {
 /* ===== FOOTER ===== */
 footer {
     padding: 20px;
-    background: #c499ff;
+    background: #9fc7a6;
     color: white;
 }
 
@@ -323,7 +323,7 @@ footer {
 .time-box span {
     font-size: 2.8rem;
     font-weight: bold;
-    color: #c499ff;
+    color: #9fc7a6;
     display: inline-block;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
