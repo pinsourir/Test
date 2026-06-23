@@ -750,3 +750,25 @@ body {
   fill: #8e7341;
   letter-spacing: 1px;
 }
+
+/* ==========================================================
+   EFFET OR SUR LES TITRES
+   ========================================================== */
+.texte-dore {
+    /* Ton dégradé magique */
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    
+    /* L'astuce pour mettre le dégradé UNIQUEMENT sur les lettres */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* On rend le texte transparent pour laisser voir le dégradé derrière */
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    
+    /* Optionnel : Un léger ombrage doux pour détacher l'or si le fond est clair */
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.15));
+    
+    display: inline-block; /* Recommandé pour le bon rendu du dégradé textuel */
+}
