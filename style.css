@@ -213,7 +213,7 @@ section {
 
 .section-purple {
     background: linear-gradient(to bottom, #ffffff, #f4f6f2);
-    color: #5c4b38;
+    color: #689d71;
 }
 
 /* ==========================================================
@@ -264,7 +264,7 @@ section {
 
 /* ===== RSVP ===== */
 .rsvp {
-    background-color: #f3e9ff; /* Un violet très pâle et élégant */
+    background-color: #d1e8d5; /* Un violet très pâle et élégant */
     color: #5c4b38; /* On met le texte en violet foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
 }
@@ -508,7 +508,7 @@ footer {
     align-items: center;
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    color: #5c4b38;
+    color: #689d71;
     cursor: pointer;
     text-align: left;
 }
@@ -593,7 +593,7 @@ footer {
         color: #5c4b38 !important;   /* Violet plus foncé pour le contraste */
         text-transform: uppercase;
         letter-spacing: 2px;
-        border-bottom: 1px solid #f3e9ff; /* Petite ligne fine entre chaque lien */
+        border-bottom: 1px solid #f4f6f2; /* Petite ligne fine entre chaque lien */
         padding-bottom: 5px;
         width: 80%; /* Pour que la bordure ne touche pas les bords */
         text-align: center;
