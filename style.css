@@ -656,9 +656,13 @@ footer {
 }
 
 /* ==========================================================
-   test enveloppe
+   ANIMATIONS ET OUVERTURE DE L'ENVELOPPE
    ========================================================== */
-/* ================= BUSTA E OMBRE ================= */
+/* Bloquer le défilement de la page tant que l'enveloppe est fermée */
+body {
+    overflow-x: hidden;
+}
+/* Le conteneur plein écran qui masque ton site au début */
 #envelope-container{
   position:fixed;
   inset:0;
@@ -666,7 +670,7 @@ footer {
   display:flex;
   justify-content:center;
   align-items:center;
-  z-index:100;
+  z-index:9999;/* Très élevé pour passer au-dessus de ta navbar */
   transition: opacity 1.2s ease;
 }
 
@@ -678,11 +682,13 @@ footer {
   overflow: hidden;
 }
 
+/* Style des deux volets (gauche et droite) */
 .envelope-left,
-.envelope-right{
-  height:100%;
-  background:#ffffff;
-  transition: transform 1.8s cubic-bezier(.645, .045, .355, 1);
+.envelope-right {
+    height: 100%;
+    background: #ffffff;
+    /* Animation douce et réaliste d'écartement */
+    transition: transform 1.8s cubic-bezier(.645, .045, .355, 1);
 }
 
 .envelope-left {
@@ -695,18 +701,16 @@ footer {
   width: 51%; 
   margin-left: -1%; 
   z-index: 2;
+  /* Ombre portée pour donner un effet de profondeur 3D */
   box-shadow: -25px 0 50px rgba(0,0,0,0.2), -10px 0 15px rgba(0,0,0,0.1); 
   border-left: 1px solid rgba(0,0,0,0.05);
 }
 
-.opened .envelope-left { transform: translateX(-100%); }
-.opened .envelope-right { transform: translateX(100%); }
+/* L'ANIMATION MAGIQUE : Quand le JS ajoute la classe 'opened' */
+.opened .envelope-left { transform: translateX(-100%); } /* Part à gauche */
+.opened .envelope-right { transform: translateX(100%); }  /* Part à droite */
 
-/* ================= SIGILLO PULSANTE ================= */
-@keyframes pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.05); }
-}
+/* ================= LE CACHET DE CIRE ANIMÉ ================= */
 
 #wax-seal{
   position:absolute;
@@ -720,7 +724,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: pulse 2.5s infinite ease-in-out;
   -webkit-tap-highlight-color: transparent;
 }
 
