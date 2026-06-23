@@ -191,7 +191,7 @@ p {
     display: inline-block;
     padding: 12px 25px;
     border-radius: 25px;
-    background-color: #c499ff;
+    background-color: #689d71;
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -285,7 +285,7 @@ footer {
    6. COMPTE À REBOURS LUXE (Style original conservé)
    ========================================================== */
 .countdown-luxe {
-    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
+    background: linear-gradient(to bottom, #fdfbff, #689d71);
     padding: 100px 20px;
     text-align: center;
 }
