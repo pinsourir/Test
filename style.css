@@ -108,7 +108,7 @@ p {
 
 .nav-links a {
     text-decoration: none;
-    color: #9fc7a6 !important; /* Ton violet de base */
+    color: #9fc7a6 !important; /* Ton vert de base */
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 1px;
@@ -116,7 +116,7 @@ p {
 }
 
 .nav-links a:hover {
-    color: #8a5fd3 !important; /* Violet plus foncé au survol */
+    color: #82d192 !important; /* vert plus foncé au survol */
 }
 
 /* LE HAMBURGER (Caché sur PC, comme avant) */
@@ -264,7 +264,7 @@ section {
 
 /* ===== RSVP ===== */
 .rsvp {
-    background-color: #d1e8d5; /* Un violet très pâle et élégant */
+    background-color: #daeddd; /* Un vert très pâle et élégant */
     color: #5c4b38; /* On met le texte en violet foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
 }
@@ -285,7 +285,7 @@ footer {
    6. COMPTE À REBOURS LUXE (Style original conservé)
    ========================================================== */
 .countdown-luxe {
-    background: linear-gradient(to bottom, #fdfbff, #f3e9ff);
+    background: linear-gradient(to bottom, #fafffb, #daeddd);
     padding: 100px 20px;
     text-align: center;
 }
@@ -426,9 +426,9 @@ footer {
 }
 
 /* Les 4 couleurs extraites de ton image */
-.color-1 { background-color: #616e53; } /* Vert Mousse Profond (Le plus haut) */
-.color-2 { background-color: #929a8a; } /* Vert Sauge Pâle */
-.color-3 { background-color: #ba9a92; } /* Rose Poudré (Nude) */
+.color-1 { background-color: #689d71; } /* Vert Mousse Profond (Le plus haut) */
+.color-2 { background-color: #9fc7a6; } /* Vert Sauge Pâle */
+.color-3 { background-color: #616e53; } /* Rose Poudré (Nude) */
 .color-4 { background-color: #f7d6d1; } /* Rose Pâle Romantique (Le plus bas) */
 .color-5 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
 
