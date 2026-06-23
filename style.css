@@ -90,7 +90,7 @@ p {
 }
 
 .navbar-logo img {
-    height: 10px; /* On réduit un tout petit peu la taille interne */
+    height: 40px; /* On réduit un tout petit peu la taille interne */
     width: auto;
     object-fit: contain;
     /* Le transform translate ajuste la position millimétrée (X, Y) */
