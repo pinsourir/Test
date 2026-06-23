@@ -428,9 +428,9 @@ footer {
 /* Les 4 couleurs extraites de ton image */
 .color-1 { background-color: #285730; } /* Vert Mousse Profond (Le plus haut) */
 .color-2 { background-color: #9fc7a6; } /* Vert Sauge Pâle */
-.color-3 { background: radial-gradient(circle farthest-corner at 35% 35%, #FFFFFF 0%, #FFFFD0 15%, #D1B464 55%, #7a6021 100%); }
-.color-4 { background-color: #5c4b38; } /* marron */
-.color-5 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
+.color-3 { background-color: #785936; } /* marron */
+.color-4 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
+.color-5 { background: radial-gradient(circle farthest-corner at 35% 35%, #FFFFFF 0%, #FFFFD0 15%, #D1B464 55%, #7a6021 100%); }
 
 /* ==========================================================
    lieux
