@@ -264,8 +264,8 @@ section {
 
 /* ===== RSVP ===== */
 .rsvp {
-    background-color: #daeddd; /* Un vert très pâle et élégant */
-    color: #5c4b38; /* On met le texte en violet foncé pour qu'il soit bien lisible */
+    background-color: #f0fcf2; /* Un vert très pâle et élégant */
+    color: #5c4b38; /* On met le texte en morron foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
 }
 
