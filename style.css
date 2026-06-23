@@ -22,7 +22,7 @@ h2 {
     margin-bottom: 20px;
     margin-top: 10px;
     font-family: 'Playfair Display', serif; /* Police classe pour TOUS les titres */
-    color: #689d71; /* Violet foncé pour le contraste */
+    color: #5c4b38; /* Violet foncé pour le contraste */
 }
 
 h3 {
@@ -213,7 +213,7 @@ section {
 
 .section-purple {
     background: linear-gradient(to bottom, #ffffff, #f4f6f2);
-    color: #689d71;
+    color: #5c4b38;
 }
 
 /* ==========================================================
@@ -223,7 +223,7 @@ section {
 .timeline {
     max-width: 600px;
     margin: 40px auto;
-    border-left: 4px solid #689d71; 
+    border-left: 4px solid #5c4b38; 
     padding-left: 35px; /* Espace entre la barre et ton texte */
     position: relative;
     text-align: left;
@@ -265,13 +265,13 @@ section {
 /* ===== RSVP ===== */
 .rsvp {
     background-color: #f3e9ff; /* Un violet très pâle et élégant */
-    color: #689d71; /* On met le texte en violet foncé pour qu'il soit bien lisible */
+    color: #5c4b38; /* On met le texte en violet foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
 }
 
 /* Si tu as un titre à l'intérieur de cette section */
 .rsvp h2 {
-    color: #689d71; /* Pour que le titre "Confirmation de présence" ressorte bien */
+    color: #5c4b38; /* Pour que le titre "Confirmation de présence" ressorte bien */
 }
 
 /* ===== FOOTER ===== */
@@ -294,7 +294,7 @@ footer {
     font-size: 2.5rem;
     font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
-    color: #689d71;
+    color: #5c4b38;
 }
 /* texte caligraphier en gris*/
 .countdown-subtitle {
@@ -387,7 +387,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #689d71;
+    color: #5c4b38;
 }
 
 .carousel-btn:hover { background: white; }
@@ -456,9 +456,9 @@ footer {
 
 .tab-btn {
     padding: 10px 20px;
-    border: 2px solid #689d71;
+    border: 2px solid #5c4b38;
     background: white;
-    color: #689d71;
+    color: #5c4b38;
     cursor: pointer;
     border-radius: 20px;
     font-family: 'Playfair Display', serif;
@@ -467,7 +467,7 @@ footer {
 }
 
 .tab-btn.active {
-    background: #689d71;
+    background: #5c4b38;
     color: white;
 }
 
@@ -508,7 +508,7 @@ footer {
     align-items: center;
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    color: #689d71;
+    color: #5c4b38;
     cursor: pointer;
     text-align: left;
 }
@@ -590,7 +590,7 @@ footer {
     /* Style des textes dans le menu mobile */
     .nav-links a {
         font-size: 22px !important; /* Plus grand pour cliquer facilement avec le doigt */
-        color: #689d71 !important;   /* Violet plus foncé pour le contraste */
+        color: #5c4b38 !important;   /* Violet plus foncé pour le contraste */
         text-transform: uppercase;
         letter-spacing: 2px;
         border-bottom: 1px solid #f3e9ff; /* Petite ligne fine entre chaque lien */
