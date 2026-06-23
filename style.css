@@ -152,7 +152,7 @@ p {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.0);
     padding: 40px;
     border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
