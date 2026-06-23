@@ -152,7 +152,7 @@ p {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 40px;
     border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
@@ -643,16 +643,16 @@ footer {
     .prev { left: 5px; }
     .next { right: 5px; }
 
-    /*.overlay {
+    .overlay {
         width: 100%;
         height: 100%;
         border-radius: 0; /* On enlève les arrondis pour que ça colle aux bords */
-       /* display: flex;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;
-    }*/
+    }
 }
 
 /* ==========================================================
