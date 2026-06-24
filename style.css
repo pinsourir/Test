@@ -9,7 +9,8 @@ body {
     color: #333;
     text-align: center;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* CORRECTIF : Empêche le scroll horizontal */
+    overflow: hidden; /* CORRECTIF : Empêche le scroll  */
+    
 }
 
 /* CORRECTIF : Empêche les paddings de faire gonfler les boîtes */
@@ -152,7 +153,6 @@ p {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.0);
     padding: 40px;
     border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
@@ -208,11 +208,19 @@ section {
 }
 
 .section-white {
-    background: white;
+    /* Ton fond papier texturé */
+    background: url('image/fond.jpg') repeat; 
+   
 }
 
 .section-purple {
-    background: linear-gradient(to bottom, #ffffff, #f4f6f2);
+    /* 1. On remet d'abord le grain de papier en premier plan de fond */
+    background-image: url('image/fond.jpg');
+    
+    /* 2. On superpose ton dégradé par-dessus avec 85% d'opacité (0.85) */
+    /* Le dégradé va du blanc pur translucide vers ton vert sauge très clair translucide */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.20), rgba(244, 246, 242, 0.85)), url('image/fond.jpg');
+    
     color: #689d71;
 }
 
@@ -238,23 +246,15 @@ section {
 .photo-etape {
     position: absolute;
     
-    /* Placement MAGIQUE : rapproché de la barre */
+    /* Placement : rapproché de la barre */
     left: -100px; /* Ajuste pour que l'image soit juste à gauche de la ligne */
     
     top: -5px;   /* Aligne la photo avec le haut du titre */
     width: 60px; /* ON AGRANDIT ICI (Taille précédente: ~45px) */
     height: auto;
-    
-    background: transparent !important; /* On garantit la transparence */
-    border: none !important;
-    display: block;
-    
-    /* Empêche les images Solid d'être trop lourdes visuellement */
-    opacity: 0.9; 
-    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+
 }
 /* --- Ajustement Mobile (pour ne pas que les images sortent de l'écran) --- */
-
 
 .timeline-item .subtitles {
     margin-top: 3px;
@@ -264,7 +264,7 @@ section {
 
 /* ===== RSVP ===== */
 .rsvp {
-    background-color: #f0fcf2; /* Un vert très pâle et élégant */
+    background-color: #f4f6f2; /* Un vert très pâle et élégant */
     color: #5c4b38; /* On met le texte en morron foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
 }
@@ -335,14 +335,14 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Animation douce (Style original conservé) */
+/* Animation douce (petit saut) */
 .flip {
     transform: translateY(-10px);
     opacity: 0.5;
 }
 
 /* ==========================================================
-   7. CARROUSEL & ADAPTATIONS HERO (Style original conservé)
+   7. CARROUSEL & ADAPTATIONS HERO 
    ========================================================== */
 .carousel-wrapper {
     position: relative;
@@ -558,20 +558,21 @@ footer {
 }
 
 /* ==========================================================
-   3. ADAPTATION MOBILE (Rétablie comme avant)
+   3. ADAPTATION MOBILE (hamburger)
    ========================================================== */
 @media (max-width: 900px) {
     .hamburger {
         display: block !important; /* Le burger apparaît sur tel */
     }
 
+    /*Page ouverte du hamburger*/
     .nav-links {
         display: none; /* Caché par défaut */
         flex-direction: column;
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100vh;
-        background-color: white; /* Fond blanc uni, comme avant */
+        background: url('image/fond.jpg') center top repeat;
         justify-content: center;
         align-items: center;
         gap: 20px;
@@ -600,17 +601,17 @@ footer {
     }
 
     /* CORRECTIF : Cache le logo "AB" quand le menu mobile est ouvert */
-    .nav-links.open ~ .nav-logo-container {
+   /* .nav-links.open ~ .nav-logo-container {
         display: none;
-    }
+    }*/
 }
-/* Correction Adaptabilité Mobile Globale (Style original conservé) */
+/* Correction Adaptabilité Mobile Globale  */
 @media (max-width: 768px) {
    .hero {
         /* On remplace l'image uniquement pour le téléphone */
         background-image: url('image/back.jpg') !important;
         
-        /* Optionnel : on ajuste la position pour que vos visages soient bien centrés */
+        /* Optionnel : on centre l'image */
         background-position: center center; 
     }
    .timeline {
@@ -622,9 +623,9 @@ footer {
     
     .photo-etape {
         /* On augmente le décalage négatif : 
-           Puisque l'icône fait 50px, -60px la place à 10px de la barre */
-        left: -75px; 
-        width: 45px; /* Légèrement réduit (de 50 à 45) pour plus de confort visuel */
+           Puisque l'icône fait 50px, -75px la place à 10px de la barre */
+        left: -90px; 
+        width: 60px; /* Légèrement réduit (de 50 à 45!) pour plus de confort visuel */
         top: 0;
     }
 
@@ -646,7 +647,6 @@ footer {
     .overlay {
         width: 100%;
         height: 100%;
-        border-radius: 0; /* On enlève les arrondis pour que ça colle aux bords */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -659,10 +659,6 @@ footer {
    ANIMATIONS ET OUVERTURE DE L'ENVELOPPE
    ========================================================== */
 
-/* Bloquer le défilement de la page tant que l'enveloppe est fermée */
-body {
-    overflow-x: hidden;
-}
 /* Le conteneur plein écran qui masque ton site au début */
 #envelope-container{
   position:fixed;
@@ -673,6 +669,8 @@ body {
   align-items:center;
   z-index:9999;/* Très élevé pour passer au-dessus de ta navbar */
   transition: opacity 1.2s ease;
+/*Empêche le smartphone de faire défiler l'arrière-plan au toucher */
+  touch-action: none;
 }
 
 .envelope{
@@ -687,7 +685,7 @@ body {
 .envelope-left,
 .envelope-right {
     height: 100%;
-    background: #ffffff;
+    background: url('image/fond.jpg');
     /* Animation douce et réaliste d'écartement */
     transition: transform 1.8s cubic-bezier(.645, .045, .355, 1);
 }
@@ -735,24 +733,10 @@ body {
   pointer-events: none;
 }
 
-.curved-text-svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
 
-.curved-text-svg text {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 15px;
-  fill: #8e7341;
-  letter-spacing: 1px;
-}
 
 /* ==========================================================
-   EFFET OR LUMINEUX (Ajusté sur le modèle du logo)
+   EFFET OR LUMINEUX 
    ========================================================== */
 .texte-dore {
     /* Nouveau dégradé radial avec des ors plus clairs et scintillants */
