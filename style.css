@@ -157,7 +157,7 @@ p {
     border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
-.page h1 {
+.hero h1 {
    font-family: "Mrs Saint Delafield", cursive;
    font-weight: 400;
    font-style: normal;
