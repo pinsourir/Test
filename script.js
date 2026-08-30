@@ -149,3 +149,14 @@ document.getElementById('wax-seal').addEventListener('click', () => {
 document.fonts.ready.then(() => {
   document.querySelector('.curved-text-svg').style.opacity = '1';
 });
+
+// Calcule la hauteur exacte de l'écran au premier chargement
+  function fixHeroHeight() {
+    const hero = document.querySelector('.hero');
+    if (hero && window.innerWidth <= 768) {
+      hero.style.height = window.innerHeight + 'px';
+    }
+  }
+
+  // S'exécute au chargement de la page
+  window.addEventListener('load', fixHeroHeight);
