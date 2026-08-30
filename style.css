@@ -616,8 +616,6 @@ footer {
       /* FIX DU ZOOM : Hauteur fixe basée sur le petit écran (barre affichée) */
         height: 100svh !important; 
         
-        /* Désactive le calcul parallax qui saccade */
-        background-attachment: scroll !important;
     }
    .timeline {
         /* On garde une marge importante à gauche pour laisser de la place aux icônes */
