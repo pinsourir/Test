@@ -136,27 +136,33 @@ p {
    4. HERO & SECTIONS (Style original conservé)
    ========================================================== */
 .hero {
-    position: relative;
+    /* --- Garde tes propriétés initiales --- */
     height: 100vh;
+    position: relative;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* Assure que la section suivante passe bien par-dessus */
     z-index: 1;
+
+    /* --- CORRECTIF DU BUG : On sépare l'image --- */
+    overflow: hidden; /* Empêche le fond de déborder sur les autres sections */
 }
 
-/* Le fond est géré séparément pour éviter le bug de zoom au scroll */
+/* Le fond est déplacé ici pour fixer le bug de scroll */
 .hero::before {
     content: '';
-    position: fixed;
+    /* --- Tes propriétés de background d'origine --- */
+    background: url('image/Gback.jpg') center/cover no-repeat;
+    
+    /* --- L'ÉQUIVALENT DU CORRECTIF : Remplace attachment: fixed --- */
+    position: fixed; /* Fixe l'image par rapport à l'écran */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('image/Gback.jpg') center/cover no-repeat;
-    will-change: transform;
-    z-index: 1;
+    z-index: -1; /* Reste bien en arrière-plan */
 }
 
 .overlay {
