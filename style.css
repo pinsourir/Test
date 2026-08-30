@@ -137,7 +137,7 @@ p {
    ========================================================== */
 .hero {
     background: url('image/Gback.jpg') center/cover no-repeat;
-    height: 100vh;
+    height: 100svh;
     position: relative;
     color: white;
     display: flex;
@@ -145,7 +145,7 @@ p {
     justify-content: center;
    
     /* L'EFFET MAGIQUE : Fixe l'image pendant le scroll */
-    background-attachment: fixed; 
+    background-attachment: scroll; 
     
     /* Assure que la section suivante passe bien par-dessus */
     z-index: 1;
