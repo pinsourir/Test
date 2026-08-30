@@ -136,19 +136,27 @@ p {
    4. HERO & SECTIONS (Style original conservé)
    ========================================================== */
 .hero {
-    background: url('image/Gback.jpg') center/cover no-repeat;
-    height: 100vh;
     position: relative;
+    height: 100vh;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-   
-    /* L'EFFET MAGIQUE : Fixe l'image pendant le scroll */
-    background-attachment: fixed; 
-    
-    /* Assure que la section suivante passe bien par-dessus */
+    overflow: hidden;
     z-index: 1;
+}
+
+/* Le fond est géré séparément pour éviter le bug de zoom au scroll */
+.hero::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/Gback.jpg') center/cover no-repeat;
+    will-change: transform;
+    z-index: -1;
 }
 
 .overlay {
