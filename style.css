@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding-top: 0px;
     font-family: 'Playfair Display', serif; /* Police chic par défaut */
-    /*background-color: #fff5f8;*/
+    background-color: #fff5f8;
     color: #333;
     text-align: center;
     scroll-behavior: smooth;
@@ -20,29 +20,44 @@ body {
 
 /* Espacement automatique pour tous les titres (Original conservé) */
 h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
     margin-top: 10px;
-    color: #5c4b38; /* Marron foncé pour le contraste */
+    font-style: italic;
+    font-weight: 600;
+    /* ==========EFFET OR LUMINEUX =================== */
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 15%, #d1b464 40%, #a88939 70%, transparent 95%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFD0 10%, #D1B464 35%, #91752b 75%, #7a6021 100%);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    
+    /* Optionnel : Un léger relief pour donner de la profondeur au texte sans l'assombrir */
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.15));
+    
+    display: inline-block;
 }
 
 h3 {
     margin-bottom: 20px;
     margin-top: 10px;
-    font-family: 'Playfair Display', serif; /* Police classe pour TOUS les titres */
     color: #9fc7a6; /* vert claire pour le contraste */
 }
 
-/* texte caligraphier en noir*/
-.texte {
-    color: #000;
-    margin-bottom: 10px;
-    font-style: italic;
-}
+
 /* texte caligraphier en gris*/
 .subtitles {
-    color: #777;
-    margin-bottom: 10px;
+    color: #5c4b38;
+    margin-bottom: 30px;
     font-style: italic;
+}
+/* Pour les sous-titres élégants */
+ .subtitle {
+    font-style: italic;
+    font-weight: 600;
 }
 
 p {
@@ -54,6 +69,8 @@ p {
 #menu p {
     font-weight: normal;
     margin: 10px 0;
+    font-style: italic;
+    color: #5c4b38;
 }
 
 /* ==========================================================
@@ -137,7 +154,7 @@ p {
    ========================================================== */
 .hero {
     background: url('image/Gback.jpg') center/cover no-repeat;
-    height: 100svh;
+    height: 100vh;
     position: relative;
     color: white;
     display: flex;
@@ -156,7 +173,7 @@ p {
     border-radius: 10px; /* Petit cadre arrondi sur PC */
 }
 /* Pour les grands titres romantiques (ex: Alicia & Bruno) */
-.page h1 {
+.hero h1 {
    font-family: "Mrs Saint Delafield", cursive;
    font-weight: 400;
    font-style: normal;
@@ -165,20 +182,10 @@ p {
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Un léger ombre pour la lisibilité */
 }
 
-/* Pour les sous-titres élégants */
-.countdown-title, .subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 600;
-}
 
 .date {
     font-size: 1.3rem;
     margin-top: 10px;
-}
-
-.tagline {
-    margin-top: 15px;
 }
 
 .hero-buttons {
@@ -212,16 +219,48 @@ section {
    
 }
 
-.section-purple {
-    /* 1. On remet d'abord le grain de papier en premier plan de fond */
-    background-image: url('image/fond.jpg');
-    
-    /* 2. On superpose ton dégradé par-dessus avec 85% d'opacité (0.85) */
-    /* Le dégradé va du blanc pur translucide vers ton vert sauge très clair translucide */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.20), rgba(244, 246, 242, 0.85)), url('image/fond.jpg');
-    
-    color: #689d71;
+/* ========BRANCHES DANS LES COINS============== */
+
+/* 1. La section qui accueille le fond */
+.section-decoree {
+    position: relative; /* Indispensable pour caler les branches par rapport à cette section */
+    background-image: url('image/fond.jpg'); 
+    background-repeat: repeat;
+    padding: 100px 40px; /* Donne de l'espace pour que le texte ne touche pas les bords */
+    z-index: 1;
 }
+
+/* 2. Le coin haut-gauche (Olivier) */
+.section-decoree::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 248px;  /* largeur de la branche */
+    height: 199px; /* hauteur de la branche */
+    background-image: url('image/olivier.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    z-index: -1; 
+    pointer-events: none; 
+}
+
+/* 3. Le coin bas-droite (Eucalyptus) */
+.section-decoree::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 141px;  /* largeur de la branche */
+    height: 224px; /* hauteur de la branche */
+    background-image: url('image/eca.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
 
 /* ==========================================================
    5. TIMELINE, GALERIE & RSVP (Style original conservé)
@@ -255,9 +294,9 @@ section {
 }
 /* --- Ajustement Mobile (pour ne pas que les images sortent de l'écran) --- */
 
-.timeline-item .subtitles {
+.timeline-item {
     margin-top: 3px;
-    color: #777;
+    color: #5c4b38;
     font-size: 1rem;
 }
 
@@ -266,11 +305,6 @@ section {
     background-color: #f4f6f2; /* Un vert très pâle et élégant */
     color: #5c4b38; /* On met le texte en morron foncé pour qu'il soit bien lisible */
     padding: 80px 20px;
-}
-
-/* Si tu as un titre à l'intérieur de cette section */
-.rsvp h2 {
-    color: #5c4b38; /* Pour que le titre "Confirmation de présence" ressorte bien */
 }
 
 /* ===== FOOTER ===== */
@@ -288,27 +322,12 @@ footer {
     padding: 100px 20px;
     text-align: center;
 }
-/* titre caligraphier en violet foncé*/
-.countdown-title {
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 10px;
-    color: #5c4b38;
-}
-/* texte caligraphier en gris*/
-.countdown-subtitle {
-    color: #777;
-    margin-bottom: 50px;
-    font-style: italic;
-}
 
 .countdown-container {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    margin-bottom: 50px;
-
 }
 
 .time-box {
@@ -431,7 +450,6 @@ footer {
 .color-2 { background-color: #9fc7a6; } /* Vert Sauge Pâle */
 .color-3 { background-color: #785936; } /* marron */
 .color-4 { background-color: #fceae8; } /* Le rose le plus clair, comme ton fond */
-.color-5 { background: radial-gradient(circle farthest-corner at 35% 35%, #FFFFFF 0%, #FFFFD0 15%, #D1B464 55%, #7a6021 100%); }
 
 /* ==========================================================
    lieux
@@ -525,6 +543,8 @@ footer {
 .faq-answer p {
     padding-bottom: 20px;
     margin: 0;
+    
+    
 }
 
 /* Le petit chevron qui tourne */
@@ -600,11 +620,30 @@ footer {
         width: 80%; /* Pour que la bordure ne touche pas les bords */
         text-align: center;
     }
+    /* ===========LE LOGO RESTE TOUJOURS AU-DESSUS (MÊME AVEC LE MENU OUVERT)===========*/
+    .navbar-logo {
+        position: fixed !important; /* Il reste fixé en haut à gauche pendant le scroll */
+        top: 0 !important;          /* Aligné en haut comme sur PC */
+        left: 30px !important;      /* Garde son emplacement exact sur le côté gauche */
+        transform: none !important; /* On annule le centrage horizontal précédent */
+        
+        /* CETTE LIGNE PERMET DE PASSER DEVANT LE FOND DU MENU (5000) : */
+        z-index: 6000 !important;   
+        
+        /* On garde exactement les mêmes dimensions qu'avant */
+        height: 70px !important;
+        width: 100px !important;
+        display: flex !important;
+        align-items: center !important;
+        pointer-events: auto !important;
+    }
 
-    /* CORRECTIF : Cache le logo "AB" quand le menu mobile est ouvert */
-   /* .nav-links.open ~ .nav-logo-container {
-        display: none;
-    }*/
+    .navbar-logo img {
+        height: 70px !important; /* Garde la même taille et proportion */
+        width: auto !important;
+        object-fit: contain !important;
+        transform: scale(0.9) translateY(2px) !important; /* Ton ajustement millimétré d'origine */
+    }
 }
 /* Correction Adaptabilité Mobile Globale  */
 @media (max-width: 768px) {
@@ -614,10 +653,6 @@ footer {
         
         /* Optionnel : on centre l'image */
         background-position: center center; 
-      
-      /* FIX DU ZOOM : Hauteur fixe basée sur le petit écran (barre affichée) */
-        height: 100svh !important; 
-        
     }
    .timeline {
         /* On garde une marge importante à gauche pour laisser de la place aux icônes */
@@ -639,9 +674,9 @@ footer {
     }
 
      /*CORRECTIF : Réduit le titre Alicia & Bruno pour qu'il tienne sur tel */
-    .hero h1 {
+    /*.hero h1 {
         font-size: 6rem; 
-    }
+    }*/
 
     .carousel-slide img {
         height: 450px; /* Un peu plus petit sur petit écran */
@@ -738,24 +773,3 @@ footer {
   pointer-events: none;
 }
 
-
-
-/* ==========================================================
-   EFFET OR LUMINEUX 
-   ========================================================== */
-.texte-dore {
-    /* Dégradé radial ajusté avec des ors blanchis, vifs et très lumineux */
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FFF3A7 0%, #FFE259 20%, #F3D062 50%, #D8B24A 75%, transparent 95%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFE0 15%, #E9D082 45%, #C2A145 80%, #A6852C 100%);
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    
-    /* Ombre adoucie pour préserver la clarté maximale du texte */
-    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
-    
-    display: inline-block;
-}
