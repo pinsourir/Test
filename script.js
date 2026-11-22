@@ -70,7 +70,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove("open");
     };
 });
-// ========= Fleche du CAROUSEL  ==========
+// ========= CAROUSEL AUTOMATIQUE & DOTS ==========
 let currentIndex = 0;
 let autoSlideInterval;
 
