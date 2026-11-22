@@ -326,7 +326,12 @@
 <section id="galerie" class="section-white">
     <h2>Galerie photos</h2>
         <div class="carousel-wrapper">
-        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Photo précédente">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>  
         
         <div class="carousel-container" id="carousel">
             <div class="carousel-slide">
@@ -347,8 +352,12 @@
                 <img src="images/photo (15).jpg" alt="Préparation 15">
             </div>
         </div>
-
-        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Photo suivante">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
     </div>
 
     <!-- Bouton futur téléchargement -->
