@@ -72,22 +72,76 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 // ========= Fleche du CAROUSEL  ==========
 let currentIndex = 0;
+let autoSlideInterval;
 
-function moveSlide(direction) {
-    const slide = document.getElementById('carousel').querySelector('.carousel-slide');
-    const totalSlides = slide.querySelectorAll('img').length;
+function initCarousel() {
+    const carousel = document.getElementById('carousel');
+    if (!carousel) return;
+
+    const slide = carousel.querySelector('.carousel-slide');
+    const images = slide.querySelectorAll('img');
+    const totalSlides = images.length;
+
+    // Création automatique des points indicateurs sous le carrousel
+    const wrapper = carousel.closest('.carousel-wrapper');
+    let dotsContainer = wrapper.querySelector('.carousel-dots');
     
-    currentIndex += direction;
-
-    if (currentIndex >= totalSlides) {
-        currentIndex = 0;
-    } else if (currentIndex < 0) {
-        currentIndex = totalSlides - 1;
+    if (!dotsContainer) {
+        dotsContainer = document.createElement('div');
+        dotsContainer.className = 'carousel-dots';
+        wrapper.appendChild(dotsContainer);
     }
 
-    const offset = -currentIndex * 100;
-    slide.style.transform = `translateX(${offset}%)`;
+    dotsContainer.innerHTML = '';
+    images.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.className = idx === 0 ? 'dot active' : 'dot';
+        dot.onclick = () => goToSlide(idx);
+        dotsContainer.appendChild(dot);
+    });
+
+    startAutoSlide();
 }
+
+function updateCarousel() {
+    const slide = document.getElementById('carousel').querySelector('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    
+    slide.style.transform = `translateX(${-currentIndex * 100}%)`;
+    
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+    });
+}
+
+function moveSlide(direction) {
+    const totalSlides = document.getElementById('carousel').querySelectorAll('.carousel-slide img').length;
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    updateCarousel();
+    resetAutoSlide(); // Relance le timer pour éviter un double saut
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+    resetAutoSlide();
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        const totalSlides = document.getElementById('carousel').querySelectorAll('.carousel-slide img').length;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }, 4000); // Change de photo toutes les 4 secondes
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Lancement au chargement de la page
+document.addEventListener('DOMContentLoaded', initCarousel);
 
 //===== Boutons Lieux ========//
 function showLieu(idLieu) {
